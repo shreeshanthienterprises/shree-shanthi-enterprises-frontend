@@ -1,5 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 import { FaPhoneAlt } from "react-icons/fa";
 import { PiHouseSimpleBold, PiUserBold } from "react-icons/pi";
 
@@ -38,66 +38,102 @@ const steps = [
 ];
 
 const ProcessSection = () => {
+  const [animationCycle, setAnimationCycle] = useState(0);
+
+  useEffect(() => {
+    const totalAnimationTime = steps.length * 2000; // 2s delay between cards
+    const waitTime = 5000; // 10s wait after all cards are shown
+    const totalCycleTime = totalAnimationTime + waitTime;
+
+    const interval = setInterval(() => {
+      setAnimationCycle(prev => prev + 1);
+    }, totalCycleTime);
+
+    return () => clearInterval(interval);
+  }, []);
+
   // Container animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        duration: 0.5
       }
     }
   };
 
-  // Step animation variants
+  // Step animation variants with continuous cycle (use function for dynamic delay)
   const stepVariants = {
     hidden: { 
       opacity: 0, 
-      y: 30
+      y: 50,
+      scale: 0.8
     },
-    visible: { 
+    visible: (custom) => ({
       opacity: 1, 
       y: 0,
+      scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.25, 0.25, 0.25, 0.75]
+        duration: 0.8,
+        ease: 'easeInOut',
+        delay: custom * 1 // 2 second delay between each card
       }
-    }
+    })
   };
 
-  // Icon container animation
+  // Icon container animation (use function for dynamic delay)
   const iconVariants = {
     hidden: { 
-      scale: 0.8,
+      scale: 0,
+      rotate: -180,
       opacity: 0
     },
-    visible: { 
+    visible: (custom) => ({
       scale: 1,
+      rotate: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut",
-        delay: 0.2
+        duration: 0.6,
+        ease: 'easeInOut',
+        delay: (custom * 2) + 0.3
       }
-    }
+    })
   };
 
   // Arrow animation
-  const arrowVariants = {
+  const getArrowVariants = (index) => ({
     hidden: { 
       opacity: 0,
-      x: -20
+      x: -30,
+      scale: 0.5
     },
     visible: { 
       opacity: 1,
       x: 0,
+      scale: 1,
       transition: {
         duration: 0.5,
-        delay: 0.3
+        delay: (index * 2) + 0.5
       }
     }
-  };
+  });
+
+  // Text animation variants
+  const getTextVariants = (index, additionalDelay = 0) => ({
+    hidden: { 
+      opacity: 0, 
+      y: 20 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        delay: (index * 2) + 0.4 + additionalDelay, 
+        duration: 0.5 
+      }
+    }
+  });
 
   return (
     <section className="bg-[#E6EEFA] py-16">
@@ -106,19 +142,25 @@ const ProcessSection = () => {
           className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto relative"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          animate="visible"
+          key={animationCycle} // This forces re-animation on each cycle
         >
           {steps.map((step, idx) => (
-            <React.Fragment key={idx}>
+            <React.Fragment key={`${animationCycle}-${idx}`}>
               <motion.div
                 className="flex flex-col items-center text-center relative max-w-[280px]"
                 variants={stepVariants}
+                initial="hidden"
+                animate="visible"
+                custom={idx}
               >
                 {/* Icon Container - Oval/Pill Shape */}
                 <motion.div
                   className="bg-[#e94d1a] rounded-full w-28 h-16 flex items-center justify-center mb-4 shadow-lg"
                   variants={iconVariants}
+                  initial="hidden"
+                  animate="visible"
+                  custom={idx}
                   whileHover={{ 
                     scale: 1.05,
                     transition: { duration: 0.2 }
@@ -129,6 +171,15 @@ const ProcessSection = () => {
                       scale: 1.1,
                       transition: { duration: 0.2 }
                     }}
+                    animate={{
+                      rotate: [0, 5, -5, 0],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: (idx * 2) + 1
+                    }}
                   >
                     {step.icon}
                   </motion.div>
@@ -137,10 +188,9 @@ const ProcessSection = () => {
                 {/* Title */}
                 <motion.h3
                   className="text-lg md:text-xl font-semibold text-black mb-3"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + idx * 0.1, duration: 0.5 }}
+                  variants={getTextVariants(idx)}
+                  initial="hidden"
+                  animate="visible"
                 >
                   {step.title}
                 </motion.h3>
@@ -148,10 +198,9 @@ const ProcessSection = () => {
                 {/* Description */}
                 <motion.p
                   className="text-gray-600 text-sm md:text-base leading-relaxed"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + idx * 0.1, duration: 0.5 }}
+                  variants={getTextVariants(idx, 0.1)}
+                  initial="hidden"
+                  animate="visible"
                 >
                   {step.description}
                 </motion.p>
@@ -161,7 +210,9 @@ const ProcessSection = () => {
               {idx < steps.length - 1 && (
                 <motion.div
                   className="hidden md:flex items-center justify-center"
-                  variants={arrowVariants}
+                  variants={getArrowVariants(idx)}
+                  initial="hidden"
+                  animate="visible"
                 >
                   <motion.svg
                     width="40"
@@ -170,12 +221,14 @@ const ProcessSection = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     animate={{
-                      x: [0, 5, 0],
+                      x: [0, 8, 0],
+                      opacity: [0.7, 1, 0.7]
                     }}
                     transition={{
                       duration: 2,
                       repeat: Infinity,
-                      ease: "easeInOut"
+                      ease: "easeInOut",
+                      delay: (idx * 2) + 1
                     }}
                   >
                     <path
@@ -193,15 +246,15 @@ const ProcessSection = () => {
               {idx < steps.length - 1 && (
                 <motion.div
                   className="block md:hidden w-1 h-8 bg-gray-300 rounded-full"
-                  initial={{ scaleY: 0 }}
-                  whileInView={{ scaleY: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 + idx * 0.1, duration: 0.4 }}
+                  initial={{ scaleY: 0, opacity: 0 }}
+                  animate={{ scaleY: 1, opacity: 1 }}
+                  transition={{ delay: (idx * 2) + 0.6, duration: 0.4 }}
                 />
               )}
             </React.Fragment>
           ))}
         </motion.div>
+
       </div>
     </section>
   );

@@ -1,9 +1,9 @@
-import Header from "@/components/Header";
-import React, { useState } from "react";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { Shield, Eye, Lock, Users, AlertTriangle, Clock, CheckCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
+import { AlertTriangle, Eye, Lock, Users } from "lucide-react";
+import React, { useState } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -197,7 +197,10 @@ const PestControl = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              At <span className="font-bold">Shree Shanthi Enterprises</span>, we understand the importance of a pest-free environment for your health, comfort, and safety. Our <span className="font-bold">Pest Control Services</span> are designed to eliminate and prevent infestations in homes, offices, and commercial spaces. Using safe, effective, and environmentally responsible methods, we protect your property from unwanted pests and ensure lasting peace of mind.
+              At <span className="font-bold">Shree Shanthi Enterprises (SSE)</span>, we know that a pest-free environment is essential for
+              your health, comfort, and safety. Our <span className="font-bold">Pest Control Services</span> are designed to eliminate and
+              prevent infestations across homes, offices, and commercial spaces. Using safe, effective, and eco-friendly methods, we
+              protect your property from unwanted pests while ensuring lasting peace of mind.
             </motion.p>
             <motion.h3
               className="text-2xl font-bold text-gray-900 mb-4"
@@ -215,20 +218,47 @@ const PestControl = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              Our expert technicians are trained to handle a wide range of pests including termites, rodents, cockroaches, ants, mosquitoes, and more. We offer comprehensive solutions such as inspection, targeted treatments, preventive care, and ongoing monitoring. All our products are child- and pet-safe, and we prioritize your safety and satisfaction. Whether you need a one-time treatment or regular maintenance, SSE delivers reliable, discreet, and guaranteed pest control for every need.
+              <p className="mb-4">
+                Our certified technicians are trained to handle a wide range of pests with precision and care.
+                We provide end-to-end solutions that combine inspection, targeted treatments, preventive care,
+                and ongoing monitoring.
+              </p>
+
+              <p className="font-semibold mb-2">We protect against:</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-800">
+                <li>Ants & Termites</li>
+                <li>Cockroaches & Silverfish</li>
+                <li>Mosquitoes & Flies</li>
+                <li>Rodents (Rats & Mice)</li>
+                <li>Bedbugs & Fleas</li>
+                <li>Pigeons & Other Nuisance Pests</li>
+              </ul>
+
+              <p className="font-semibold mt-4 mb-2"> Key Benefits of SSE Pest Control:</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-800">
+                <li>Safe for Children & Pets</li>
+                <li>Eco-Friendly, Certified Products</li>
+                <li>Customized One-Time & Regular Maintenance Plans</li>
+                <li>Discreet, Reliable & Guaranteed Service</li>
+              </ul>
+
+              <p className="mt-4">
+                With SSE, you get more than pest elimination—you gain long-term protection and peace of mind.
+              </p>
+
             </motion.p>
           </div>
         </div>
       </section>
 
       {/* Contact Banner - Same as About Page */}
-      <section className="py-10 md:py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
+      <section className="py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
         <div className="absolute inset-0 z-0 pointer-events-none" style={{
           backgroundImage: `repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px)`
         }} />
-        <div className="container mx-auto px-2 md:px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '120px' }}>
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '180px' }}>
           <motion.h2
-            className="text-white text-2xl md:text-4xl font-semibold mb-6 md:mb-0"
+            className="text-white text-3xl md:text-4xl font-semibold mb-8 lg:mb-0"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -239,13 +269,15 @@ const PestControl = () => {
           </motion.h2>
           <motion.a
             href="tel:7674073004"
-            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-5 rounded-xl shadow-lg transition-all"
-            style={{ marginLeft: '0', marginTop: '8px', marginBottom: '8px' }}
+            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
+            style={{ marginLeft: 'auto' }}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={2}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Call Us 76740 73004
           </motion.a>

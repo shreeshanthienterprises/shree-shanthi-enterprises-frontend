@@ -1,9 +1,9 @@
-import Header from "@/components/Header";
-import React, { useState } from "react";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { Shield, Eye, Lock, Users, AlertTriangle, Clock, CheckCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
+import { AlertTriangle, Eye, Lock, Users } from "lucide-react";
+import React, { useState } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -197,7 +197,7 @@ const SecurityServices = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              At <span className="font-bold">Shree Shanthi Enterprises</span>, we believe that safety is the foundation of peace of mind. Our <span className="font-bold">Security Services</span> are designed to protect people, property, and assets with unmatched professionalism and reliability. Whether it’s a residential complex, corporate office, commercial establishment, or industrial site, we provide highly trained and vigilant security personnel to ensure your surroundings remain secure at all times.
+              At <span className="font-bold">Shree Shanthi Enterprises (SSE)</span>, we believe peace of mind starts with safety. Our <span className="font-bold">Security Services</span> safeguard people, property, and assets with professionalism and reliability. From homes and offices to commercial and industrial sites, our trained personnel ensure your premises stay protected—day and night.
             </motion.p>
             <motion.h3
               className="text-2xl font-bold text-gray-900 mb-4"
@@ -215,20 +215,36 @@ const SecurityServices = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              Our security staff undergo rigorous training in surveillance, access control, emergency response, and conflict management. They are equipped with the skills and knowledge to handle real-world situations efficiently, ensuring quick action in times of need. From 24/7 on-site security guards to mobile patrols and CCTV monitoring, we offer customized solutions tailored to your specific requirements. Our team is not only alert and disciplined but also courteous, creating a safe yet welcoming environment.
+              <p className="mb-4">
+                Our security staff undergo comprehensive training in surveillance, access control, emergency response, and conflict management.
+                Equipped with modern skills and real-world readiness, they are prepared to act swiftly and effectively in any situation.
+              </p>
+
+              <p className="font-semibold mb-2">We provide:</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-800">
+                <li>24/7 On-Site Security Guards</li>
+                <li>Mobile Patrol Services</li>
+                <li>CCTV Monitoring & Access Control</li>
+                <li>Customized Security Solutions</li>
+              </ul>
+
+              <p className="mt-4">
+                Beyond vigilance and discipline, our team is also trained in courtesy and professionalism, ensuring a secure yet welcoming
+                environment for residents, employees, and visitors alike.
+              </p>
             </motion.p>
           </div>
         </div>
       </section>
 
       {/* Contact Banner - Same as About Page */}
-      <section className="py-10 md:py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
+      <section className="py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
         <div className="absolute inset-0 z-0 pointer-events-none" style={{
           backgroundImage: `repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px)`
         }} />
-        <div className="container mx-auto px-2 md:px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '120px' }}>
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '180px' }}>
           <motion.h2
-            className="text-white text-2xl md:text-4xl font-semibold mb-6 md:mb-0"
+            className="text-white text-3xl md:text-4xl font-semibold mb-8 lg:mb-0"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -239,13 +255,15 @@ const SecurityServices = () => {
           </motion.h2>
           <motion.a
             href="tel:7674073004"
-            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-5 rounded-xl shadow-lg transition-all"
-            style={{ marginLeft: '0', marginTop: '8px', marginBottom: '8px' }}
+            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
+            style={{ marginLeft: 'auto' }}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={2}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Call Us 76740 73004
           </motion.a>
