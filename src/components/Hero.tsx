@@ -109,7 +109,7 @@ const Hero = () => {
           variants={imageVariant}
         >
           <img
-            src={heroImg}
+            src="https://res.cloudinary.com/db57uudtz/image/upload/v1757853279/image_puywxa.png"
             alt="Security Guard"
             className="w-full max-w-[420px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px] object-contain object-bottom"
             style={{ marginBottom: '0', marginTop: '0' }}

@@ -1,23 +1,20 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import securityImg from "@/assets/image1.jpg";
-import cleaningImg from "@/assets/image2.jpg";
-import pestImg from "@/assets/image3.jpg";
 
 const services = [
   {
     title: "Security Services",
-    image: cleaningImg,
+    image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757853925/image2_ax5lmv.jpg",
     link: "/services/security",
   },
   {
     title: "House Keeping Services",
-    image: securityImg,
+    image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757853744/image1_qkmriu.jpg",
     link: "/services/cleaning",
   },
   {
     title: "Pest Control Service",
-    image: pestImg,
+    image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757854037/image3_zcezgx.jpg",
     link: "/services/pest-control",
   },
 ];

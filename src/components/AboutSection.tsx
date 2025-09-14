@@ -75,7 +75,7 @@ const AboutSection = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.img
-              src="/hero-about.png"
+              src="https://res.cloudinary.com/db57uudtz/image/upload/v1757853433/hero-about_miim7j.png"
               alt="Professional cleaning team at work"
               className="rounded-3xl object-cover w-full h-[450px] shadow-2xl"
               whileHover={{ scale: 1.02 }}

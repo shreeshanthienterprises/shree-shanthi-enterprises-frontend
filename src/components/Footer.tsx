@@ -1,18 +1,24 @@
-import { useState, memo, useCallback, useMemo } from "react";
-import img1 from "@/assets/image1.jpg";
-import img2 from "@/assets/image2.jpg";
-import img3 from "@/assets/image3.jpg";
-import img4 from "@/assets/image4.jpg";
-import img5 from "@/assets/image5.jpg";
-import img6 from "@/assets/image6.jpg";
 import logo from "@/assets/SSE logo-01.png";
+import { memo, useCallback, useMemo, useState } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
-// Move images array outside component
-const images = [img1, img2, img3, img4, img5, img6];
+// Use Cloudinary URLs for images (no local imports)
+const images = [
+  "https://res.cloudinary.com/db57uudtz/image/upload/v1757853744/image1_qkmriu.jpg",
+  "https://res.cloudinary.com/db57uudtz/image/upload/v1757853925/image2_ax5lmv.jpg",
+  "https://res.cloudinary.com/db57uudtz/image/upload/v1757854037/image3_zcezgx.jpg",
+  "https://res.cloudinary.com/db57uudtz/image/upload/v1757854438/image4_dwtssz.jpg",
+  "https://res.cloudinary.com/db57uudtz/image/upload/v1757854464/image5_ijgjzo.jpg",
+  "https://res.cloudinary.com/db57uudtz/image/upload/v1757854487/image6_unbjen.jpg"
+];
 
 // Enhanced image component with modern styling
-const ImageThumbnail = memo(({ src, index, isVisible }) => {
+interface ImageThumbnailProps {
+  src: string;
+  index: number;
+  isVisible: boolean;
+}
+const ImageThumbnail = memo(({ src, index, isVisible }: ImageThumbnailProps) => {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
@@ -33,7 +39,7 @@ const ImageThumbnail = memo(({ src, index, isVisible }) => {
       {error && shouldLoad ? (
         <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-gray-50">
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
         </div>
       ) : shouldLoad ? (

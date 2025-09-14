@@ -38,7 +38,7 @@ const SecurityServices = () => {
     }
     setLoading(true);
     try {
-  const res = await fetch("https://shree-shanthi-backend.onrender.com/api/contact", {
+      const res = await fetch("https://shree-shanthi-backend.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -115,7 +115,7 @@ const SecurityServices = () => {
             initial="hidden"
             animate="visible"
           >
-            Security Services 
+            Security Services
           </motion.h1>
           <motion.p
             className="text-lg md:text-2xl text-white text-center max-w-4xl mx-auto mb-8 drop-shadow leading-relaxed"
@@ -125,7 +125,7 @@ const SecurityServices = () => {
           >
             Protecting You, Always Secure
           </motion.p>
-          
+
         </div>
       </section>
 
@@ -222,13 +222,13 @@ const SecurityServices = () => {
       </section>
 
       {/* Contact Banner - Same as About Page */}
-  <section className="py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
+      <section className="py-10 md:py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
         <div className="absolute inset-0 z-0 pointer-events-none" style={{
           backgroundImage: `repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px)`
         }} />
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '180px' }}>
+        <div className="container mx-auto px-2 md:px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '120px' }}>
           <motion.h2
-            className="text-white text-3xl md:text-4xl font-semibold mb-8 lg:mb-0"
+            className="text-white text-2xl md:text-4xl font-semibold mb-6 md:mb-0"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -239,15 +239,13 @@ const SecurityServices = () => {
           </motion.h2>
           <motion.a
             href="tel:7674073004"
-            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
-            style={{ marginLeft: 'auto' }}
+            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-5 rounded-xl shadow-lg transition-all"
+            style={{ marginLeft: '0', marginTop: '8px', marginBottom: '8px' }}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={2}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             Call Us 76740 73004
           </motion.a>

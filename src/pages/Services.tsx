@@ -28,21 +28,21 @@ const Services = () => {
     {
       id: 1,
       icon: Shield,
-      image: "/services-1.png",
+      image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757855106/services-1_bdzsoc.webp",
       description: "Professional security solutions with 24/7 monitoring and trained personnel.",
       features: ["24/7 Security Personnel", "CCTV Monitoring", "Access Control", "Emergency Response"]
     },
     {
       id: 2,
       icon: Sparkles,
-      image: "/services-2.png",
+      image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757855131/services-2_ylwbmm.avif",
       description: "Complete cleaning solutions for homes and commercial spaces.",
       features: ["Regular House Cleaning", "Deep Cleaning", "Office Maintenance", "Eco-Friendly Products"]
     },
     {
       id: 3,
       icon: Bug,
-      image: "/services-3.png",
+      image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757855163/services-3_aic7qc.jpg",
       description: "Effective pest management with safe and sustainable methods.",
       features: ["Residential Treatment", "Commercial Solutions", "Preventive Care", "Safe Methods"]
     }
@@ -53,10 +53,10 @@ const Services = () => {
       <Header />
       {/* Hero Section - Full Screen */}
       <section className="relative min-h-screen h-screen w-full flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
           style={{
-            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('/service-hero.png')"
+            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('https://res.cloudinary.com/db57uudtz/image/upload/v1757855054/service-hero_vmagj0.webp')"
           }}
         />
         <div className="relative z-20 w-full flex flex-col items-center justify-center h-full text-center px-4">
@@ -128,12 +128,12 @@ const Services = () => {
                     <service.icon className="w-8 h-8 mb-2" />
                   </div>
                 </div>
-                
+
                 <div className="p-8">
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {service.description}
                   </p>
-                  
+
                   <div className="space-y-3 mb-8">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-3">
@@ -142,14 +142,14 @@ const Services = () => {
                       </div>
                     ))}
                   </div>
-                  
+
                   <a
                     href={
                       index === 0
                         ? "/services/security"
                         : index === 1
-                        ? "/services/cleaning"
-                        : "/services/pest-control"
+                          ? "/services/cleaning"
+                          : "/services/pest-control"
                     }
                     className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 group"
                   >
@@ -164,13 +164,13 @@ const Services = () => {
       </section>
 
       {/* Contact Banner - Same as About Page */}
-  <section className="py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
+      <section className="py-10 md:py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
         <div className="absolute inset-0 z-0 pointer-events-none" style={{
           backgroundImage: `repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px)`
         }} />
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '180px' }}>
+        <div className="container mx-auto px-2 md:px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '120px' }}>
           <motion.h2
-            className="text-white text-3xl md:text-4xl font-semibold mb-8 lg:mb-0"
+            className="text-white text-2xl md:text-4xl font-semibold mb-6 md:mb-0"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -181,15 +181,13 @@ const Services = () => {
           </motion.h2>
           <motion.a
             href="tel:7674073004"
-            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
-            style={{ marginLeft: 'auto' }}
+            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-5 rounded-xl shadow-lg transition-all"
+            style={{ marginLeft: '0', marginTop: '8px', marginBottom: '8px' }}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={2}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             Call Us 76740 73004
           </motion.a>
@@ -197,7 +195,7 @@ const Services = () => {
       </section>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
