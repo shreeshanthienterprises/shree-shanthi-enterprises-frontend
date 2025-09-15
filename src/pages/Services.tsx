@@ -35,7 +35,7 @@ const Services = () => {
     {
       id: 2,
       icon: Sparkles,
-      image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757855131/services-2_ylwbmm.avif",
+      image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1757964157/c98fa6f9-6cda-4659-b11b-a1ccd0670a59_fekqto.png",
       description: "Complete cleaning solutions for homes and commercial spaces.",
       features: ["Regular House Cleaning", "Deep Cleaning", "Office Maintenance", "Eco-Friendly Products"]
     },
@@ -163,6 +163,89 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+              variants={fadeUp}
+            >
+              Why Choose <span className="text-[#F44E40]">SS</span>
+              <span className="text-[#184FA1]">E</span>?
+            </motion.h2>
+            <motion.p
+              className="text-lg text-gray-600 max-w-2xl mx-auto"
+              variants={fadeUp}
+            >
+              Trusted by thousands of customers for our commitment to excellence and
+              reliability
+            </motion.p>
+          </motion.div>
+
+          {/* Features */}
+          <motion.div
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {/* 24/7 Service */}
+            <motion.div
+              className="relative group text-center rounded-2xl p-8 h-80 flex flex-col justify-end bg-cover bg-center shadow-xl hover:scale-105 transition-transform duration-500"
+              style={{ backgroundImage: "url('https://res.cloudinary.com/ds4stvfr3/image/upload/v1757967579/95341afd-78ac-43a5-9d0a-3104a43e7843_pcvred.png')" }}
+              variants={fadeUp}
+            >
+              <div className="bg-black/50 p-4 rounded-xl">
+                <h3 className="text-xl font-bold text-white mb-2">24/7 Availability</h3>
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  Round-the-clock service availability for emergencies and urgent
+                  requirements with quick response times
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Quality Assurance */}
+            <motion.div
+              className="relative group text-center rounded-2xl p-8 h-80 flex flex-col justify-end bg-cover bg-center shadow-xl hover:scale-105 transition-transform duration-500"
+              style={{ backgroundImage: "url('https://res.cloudinary.com/ds4stvfr3/image/upload/v1757967747/21572bad-5c5d-4867-934d-43fef20042f5_tbpep4.png')" }}
+              variants={fadeUp}
+            >
+              <div className="bg-black/50 p-4 rounded-xl">
+                <h3 className="text-xl font-bold text-white mb-2">Quality Guaranteed</h3>
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  We maintain the highest standards of quality with regular inspections
+                  and customer satisfaction guarantee
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Affordable Pricing */}
+            <motion.div
+              className="relative group text-center rounded-2xl p-8 h-80 flex flex-col justify-end bg-cover bg-center shadow-xl hover:scale-105 transition-transform duration-500"
+              style={{ backgroundImage: "url('https://res.cloudinary.com/ds4stvfr3/image/upload/v1757967844/c884e7bc-e7a5-4082-80f9-2c8610d0981a_kvnqnj.png')" }}
+              variants={fadeUp}
+            >
+              <div className="bg-black/50 p-4 rounded-xl">
+                <h3 className="text-xl font-bold text-white mb-2">Competitive Pricing</h3>
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  Transparent and competitive pricing with no hidden costs. Get premium
+                  services at affordable rates
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* Contact Banner - Same as About Page */}
       <section className="py-10 md:py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
         <div className="absolute inset-0 z-0 pointer-events-none" style={{
@@ -189,7 +272,7 @@ const Services = () => {
             viewport={{ once: true }}
             custom={2}
           >
-            Call Us 76740 73004
+            Call Us +91-7330009993
           </motion.a>
         </div>
       </section>

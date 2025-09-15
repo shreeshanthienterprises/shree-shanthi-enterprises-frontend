@@ -11,7 +11,7 @@ const services = [
   },
   {
     title: "House Keeping Services",
-    image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757855131/services-2_ylwbmm.avif",
+    image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1757964157/c98fa6f9-6cda-4659-b11b-a1ccd0670a59_fekqto.png",
     link: "/services/cleaning",
     description: "Comprehensive cleaning services to keep your space pristine",
     icon: "✨"

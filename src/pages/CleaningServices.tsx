@@ -105,7 +105,7 @@ const CleaningServices = () => {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
           style={{
-            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('https://res.cloudinary.com/db57uudtz/image/upload/v1757855131/services-2_ylwbmm.avif')"
+            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('https://res.cloudinary.com/ds4stvfr3/image/upload/v1757964157/c98fa6f9-6cda-4659-b11b-a1ccd0670a59_fekqto.png')"
           }}
         />
         <div className="relative z-20 w-full flex flex-col items-center justify-center h-full text-center px-4">
@@ -268,7 +268,7 @@ const CleaningServices = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Call Us 76740 73004
+            Call Us +91-7330009993
           </motion.a>
         </div>
       </section>

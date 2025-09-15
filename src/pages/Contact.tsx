@@ -215,7 +215,7 @@ const Contact = () => {
               viewport={{ once: true }}
               custom={2}
             >
-              Call Us 76740 73004
+              Call Us +91-7330009993
             </motion.a>
           </div>
         </section>

@@ -143,7 +143,7 @@ const AboutUs = () => {
                 title: "Safety & Hygiene Training",
                 desc: "Our housekeeping staff are trained in cleaning, hygiene, and eco-friendly product use to ensure spotless, safe, and healthy spaces."
               }, {
-                img: "https://res.cloudinary.com/db57uudtz/image/upload/v1757854793/about-img-3_ihusps.avif",
+                img: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1757964512/0ca3b91e-d4f4-4c7d-9562-544113f050c1_yuqauq.png",
                 title: "Professional Security Workshops",
                 desc: "We regularly train our security personnel in access control, emergency response, and conflict management to keep them prepared to safeguard people and property."
               }, {
@@ -197,7 +197,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               custom={2}
             >
-              Call Us 76740 73004
+              Call Us +91-7330009993
             </motion.a>
           </div>
         </section>

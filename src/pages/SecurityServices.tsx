@@ -265,7 +265,7 @@ const SecurityServices = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Call Us 76740 73004
+            Call Us +91-7330009993
           </motion.a>
         </div>
       </section>

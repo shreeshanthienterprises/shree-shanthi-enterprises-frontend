@@ -61,7 +61,7 @@ const Header = () => {
                 {!isScrolled ? (
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg border border-white/40 transition-all duration-300 hover:shadow-xl">
                     <img
-                      src="https://res.cloudinary.com/ds4stvfr3/image/upload/v1757860110/sse-logo_yjq5pd.png"
+                      src="/new-logo.png"
                       alt="SSE Logo"
                       className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 object-contain transition-all duration-300"
                     />
@@ -69,7 +69,7 @@ const Header = () => {
                 ) : (
                   <div className="transition-all duration-300">
                     <img
-                      src="https://res.cloudinary.com/ds4stvfr3/image/upload/v1757860110/sse-logo_yjq5pd.png"
+                      src="/new-logo.png"
                       alt="SSE Logo"
                       className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain"
                     />

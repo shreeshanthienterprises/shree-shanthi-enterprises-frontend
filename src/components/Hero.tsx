@@ -1,5 +1,3 @@
-import heroImg from '@/assets/image.png';
-import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,6 +13,11 @@ const container = {
 const framerTitle = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
   visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 1.0 } },
+};
+
+const taglineVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9 } },
 };
 
 const imageVariant = {
@@ -49,34 +52,30 @@ const Hero = () => {
       />
 
       <motion.div
-        className="
-          container mx-auto px-4 
-          flex flex-col md:flex-row md:items-center gap-10 w-full h-full relative z-10
-        "
+        className="container mx-auto px-4 flex flex-col md:flex-row md:items-center gap-10 w-full h-full relative z-10"
         variants={container}
         initial="hidden"
         animate="visible"
       >
         {/* TEXT */}
-        <div
-          className="
-            flex-1 max-w-2xl flex flex-col 
-            items-center md:items-start 
-            justify-center 
-            mx-auto 
-            pt-2 pb-2 
-            text-center md:text-left 
-            min-h-[calc(100vh-340px)] md:min-h-[50vh]
-          "
-        >
-          <motion.h1
-            className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-snug md:leading-[1.15]"
+        <div className="flex-1 max-w-2xl flex flex-col items-center md:items-start justify-center mx-auto pt-2 pb-2 text-center md:text-left min-h-[calc(100vh-340px)] md:min-h-[50vh]">
+          {/* SSE Text Logo */}
+          <motion.img
+            src="/sse-text.png"
+            alt="SSE Text Logo"
+            className="w-full max-w-[550px] mb-4"
             variants={framerTitle}
-          >
-            <span className="block">Safety, Hygiene,</span>
-            <span className="block">Pest Control.</span>
-          </motion.h1>
+          />
 
+          {/* Service tagline */}
+          <motion.h2
+            className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold mb-6"
+            variants={taglineVariant}
+          >
+            Safety, Hygiene, <br /> Pest Control.
+          </motion.h2>
+
+          {/* Subtitle */}
           <motion.p
             className="text-[#cbe6fa] text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-xl mx-auto md:mx-0"
             variants={subtitleVariant}
@@ -84,6 +83,7 @@ const Hero = () => {
             Since 2020, SSE has been committed to providing reliable and customized solutions that exceed expectations.
           </motion.p>
 
+          {/* CTA button */}
           <motion.div
             className="w-full flex justify-center md:justify-start items-center mt-4 sm:mt-6"
             variants={ctaVariant}
@@ -98,8 +98,6 @@ const Hero = () => {
               Explore our services
             </button>
           </motion.div>
-
-          {/* Mobile-only ratings removed for clean look */}
         </div>
 
         {/* IMAGE */}
@@ -109,10 +107,9 @@ const Hero = () => {
           variants={imageVariant}
         >
           <img
-            src="https://res.cloudinary.com/db57uudtz/image/upload/v1757853279/image_puywxa.png"
+            src="/hero-img.png"
             alt="Security Guard"
             className="w-full max-w-[420px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px] object-contain object-bottom"
-            style={{ marginBottom: '0', marginTop: '0' }}
           />
         </motion.div>
       </motion.div>
