@@ -105,7 +105,7 @@ const SecurityServices = () => {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
           style={{
-            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('/services-1.png')"
+            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('https://res.cloudinary.com/db57uudtz/image/upload/v1757855106/services-1_bdzsoc.webp')"
           }}
         />
         <div className="relative z-20 w-full flex flex-col items-center justify-center h-full text-center px-4">

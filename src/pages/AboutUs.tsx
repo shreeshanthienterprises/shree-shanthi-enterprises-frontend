@@ -62,18 +62,18 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 custom={1}
               >
-                <div className="relative rounded-2xl overflow-hidden shadow-xl bg-white w-full max-w-[480px] h-auto aspect-square sm:aspect-auto"
-                  style={{ maxWidth: '100%' }}
-                >
-                  <img
-                    src="https://res.cloudinary.com/db57uudtz/image/upload/v1757854709/about-img-1_czdjqa.png"
-                    alt="Shree Shanthi Enterprises"
-                    className="w-full h-auto object-cover"
-                    style={{ display: 'block', maxWidth: '100%' }}
-                  />
-                  <div className="absolute left-4 bottom-6 text-white">
-                    <div className="text-lg mb-1 opacity-80">Since</div>
-                    <div className="text-5xl font-bold">2020</div>
+                <div className="relative rounded-2xl overflow-hidden shadow-xl bg-white w-full max-w-[480px]">
+                  <div className="relative">
+                    <img
+                      src="https://res.cloudinary.com/db57uudtz/image/upload/v1757854709/about-img-1_czdjqa.png"
+                      alt="Shree Shanthi Enterprises"
+                      className="w-full h-auto object-cover block"
+                    />
+                    {/* Overlay positioned relative to image */}
+                    <div className="absolute left-4 md:left-6 bottom-4 md:bottom-6 text-white z-10">
+                      <div className="text-sm md:text-lg mb-1 opacity-80">Since</div>
+                      <div className="text-3xl md:text-5xl font-bold">2020</div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -85,13 +85,13 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 custom={2}
               >
-                <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Shree Shanthi<br />Enterprises began<br />with a simple mission
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 max-w-xl">
                   Over the years, we have grown from a small local business into a trusted partner for homes and businesses, delivering solutions that are not only effective but also safe, sustainable, and customer-focused.
                 </p>
-                <div className="grid grid-cols-2 gap-6 max-w-lg">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg">
                   {["Transparency", "Excellence", "Sustainability", "Customer focus"].map((val, i) => (
                     <motion.div
                       key={i}
@@ -117,7 +117,7 @@ const AboutUs = () => {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <motion.h2
-                className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
@@ -127,7 +127,7 @@ const AboutUs = () => {
                 We invest in<br />continuous training
               </motion.h2>
               <motion.p
-                className="text-lg text-gray-600 max-w-xl mx-auto"
+                className="text-lg text-gray-600 max-w-xl mx-auto lg:mx-0"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
@@ -161,9 +161,9 @@ const AboutUs = () => {
                   custom={i + 3}
                 >
                   <img src={card.img} alt={card.title} className="w-full h-64 object-cover" />
-                  <div className="p-8">
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-3">{card.title}</h3>
-                    <p className="text-gray-600">{card.desc}</p>
+                  <div className="p-6 md:p-8">
+                    <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">{card.title}</h3>
+                    <p className="text-gray-600 text-sm md:text-base">{card.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -178,7 +178,7 @@ const AboutUs = () => {
           }} />
           <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '180px' }}>
             <motion.h2
-              className="text-white text-3xl md:text-4xl font-semibold mb-8 lg:mb-0"
+              className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 lg:mb-0 text-center lg:text-left"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -189,7 +189,7 @@ const AboutUs = () => {
             </motion.h2>
             <motion.a
               href="tel:7674073004"
-              className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-lg transition-all"
+              className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-4 md:py-5 rounded-xl shadow-lg transition-all text-center"
               style={{ marginLeft: 'auto' }}
               variants={fadeUp}
               initial="hidden"

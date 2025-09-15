@@ -168,7 +168,7 @@ const Footer = () => {
           <div className="flex flex-col items-start gap-6">
             <div>
               <img 
-                src={logo} 
+                src="https://res.cloudinary.com/ds4stvfr3/image/upload/v1757860110/sse-logo_yjq5pd.png" 
                 alt="SSE Logo" 
                 className="w-36 h-36 object-contain"
                 loading="eager"
