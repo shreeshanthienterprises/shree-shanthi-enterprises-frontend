@@ -246,7 +246,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Contact Banner - Same as About Page */}
+      {/* Contact Banner */}
       <section className="py-10 md:py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
         <div className="absolute inset-0 z-0 pointer-events-none" style={{
           backgroundImage: `repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px)`
@@ -263,7 +263,9 @@ const Services = () => {
             Need a SSE People fast?
           </motion.h2>
           <motion.a
-            href="tel:7674073004"
+            href="https://wa.me/917330009993"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-5 rounded-xl shadow-lg transition-all"
             style={{ marginLeft: '0', marginTop: '8px', marginBottom: '8px' }}
             variants={fadeUp}
@@ -272,11 +274,10 @@ const Services = () => {
             viewport={{ once: true }}
             custom={2}
           >
-            Call Us +91-7330009993
+            WhatsApp +91-7330009993
           </motion.a>
         </div>
       </section>
-
       {/* Footer */}
       <Footer />
     </div>

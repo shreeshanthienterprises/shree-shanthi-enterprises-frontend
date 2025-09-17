@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 const services = [
   {
     title: "Security Services",
-    image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757855106/services-1_bdzsoc.webp",
+    image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1758108640/5f6ed60d-fd65-437b-bedc-585387acfcd5_biucff.png",
     link: "/services/security",
     description: "Professional security solutions for your peace of mind",
     icon: "🛡"
   },
   {
     title: "House Keeping Services",
-    image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1757964157/c98fa6f9-6cda-4659-b11b-a1ccd0670a59_fekqto.png",
+    image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1758108966/generated-image_on169t.png",
     link: "/services/cleaning",
     description: "Comprehensive cleaning services to keep your space pristine",
     icon: "✨"
   },
   {
     title: "Pest Control Service",
-    image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757855163/services-3_aic7qc.jpg",
+    image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1758109282/e884d3c2-7ebf-45c5-8e17-cf50885b8664_nxw2gw.png",
     link: "/services/pest-control",
     description: "Effective pest management for a healthier environment",
     icon: "🐛"

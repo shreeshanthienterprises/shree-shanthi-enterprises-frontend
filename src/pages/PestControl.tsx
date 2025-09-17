@@ -105,7 +105,7 @@ const PestControl = () => {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
           style={{
-            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('https://res.cloudinary.com/db57uudtz/image/upload/v1757855163/services-3_aic7qc.jpg')"
+            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('https://res.cloudinary.com/ds4stvfr3/image/upload/v1758109282/e884d3c2-7ebf-45c5-8e17-cf50885b8664_nxw2gw.png')"
           }}
         />
         <div className="relative z-20 w-full flex flex-col items-center justify-center h-full text-center px-4">
@@ -251,14 +251,14 @@ const PestControl = () => {
         </div>
       </section>
 
-      {/* Contact Banner - Same as About Page */}
-      <section className="py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
+      {/* Contact Banner */}
+      <section className="py-10 md:py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
         <div className="absolute inset-0 z-0 pointer-events-none" style={{
           backgroundImage: `repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px)`
         }} />
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '180px' }}>
+        <div className="container mx-auto px-2 md:px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '120px' }}>
           <motion.h2
-            className="text-white text-3xl md:text-4xl font-semibold mb-8 lg:mb-0"
+            className="text-white text-2xl md:text-4xl font-semibold mb-6 md:mb-0"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -268,18 +268,18 @@ const PestControl = () => {
             Need a SSE People fast?
           </motion.h2>
           <motion.a
-            href="tel:7674073004"
-            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
-            style={{ marginLeft: 'auto' }}
+            href="https://wa.me/917330009993"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-5 rounded-xl shadow-lg transition-all"
+            style={{ marginLeft: '0', marginTop: '8px', marginBottom: '8px' }}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={2}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
-            Call Us +91-7330009993
+            WhatsApp +91-7330009993
           </motion.a>
         </div>
       </section>

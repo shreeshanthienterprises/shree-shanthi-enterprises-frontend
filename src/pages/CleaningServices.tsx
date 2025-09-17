@@ -38,7 +38,7 @@ const CleaningServices = () => {
     }
     setLoading(true);
     try {
-  const res = await fetch("https://shree-shanthi-backend.onrender.com/api/contact", {
+      const res = await fetch("https://shree-shanthi-backend.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -105,7 +105,7 @@ const CleaningServices = () => {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
           style={{
-            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('https://res.cloudinary.com/ds4stvfr3/image/upload/v1757964157/c98fa6f9-6cda-4659-b11b-a1ccd0670a59_fekqto.png')"
+            backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url('https://res.cloudinary.com/ds4stvfr3/image/upload/v1758108966/generated-image_on169t.png')"
           }}
         />
         <div className="relative z-20 w-full flex flex-col items-center justify-center h-full text-center px-4">
@@ -115,7 +115,7 @@ const CleaningServices = () => {
             initial="hidden"
             animate="visible"
           >
-            House Keeping Services 
+            House Keeping Services
           </motion.h1>
           <motion.p
             className="text-lg md:text-2xl text-white text-center max-w-4xl mx-auto mb-8 drop-shadow leading-relaxed"
@@ -125,7 +125,7 @@ const CleaningServices = () => {
           >
             Fresh, Tidy, and Welcoming
           </motion.p>
-          
+
         </div>
       </section>
 
@@ -215,39 +215,39 @@ const CleaningServices = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-             <p className="mb-4">
-  Our housekeeping staff are professionally trained in modern cleaning techniques and equipped with eco-friendly products 
-  to maintain a safe and healthy environment.
-</p>
+              <p className="mb-4">
+                Our housekeeping staff are professionally trained in modern cleaning techniques and equipped with eco-friendly products
+                to maintain a safe and healthy environment.
+              </p>
 
-<p className="font-semibold mb-2">We provide:</p>
-<ul className="list-disc list-inside space-y-1 text-gray-800">
-  <li>Dusting, Sweeping & Mopping</li>
-  <li>Vacuum Cleaning & Cobweb Removal</li>
-  <li>Window, Glass & Partition Cleaning</li>
-  <li>Waste Collection & Disposal</li>
-  <li>Restroom Sanitization & Maintenance</li>
-  <li>Gardening & Landscaping</li>
-</ul>
+              <p className="font-semibold mb-2">We provide:</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-800">
+                <li>Dusting, Sweeping & Mopping</li>
+                <li>Vacuum Cleaning & Cobweb Removal</li>
+                <li>Window, Glass & Partition Cleaning</li>
+                <li>Waste Collection & Disposal</li>
+                <li>Restroom Sanitization & Maintenance</li>
+                <li>Gardening & Landscaping</li>
+              </ul>
 
-<p className="mt-4">
-  From daily upkeep to intensive deep cleaning, our reliable and courteous staff are committed to exceeding your expectations. 
-  With SSE, you don’t just get cleaning—you get the comfort of a professionally maintained space.
-</p>
+              <p className="mt-4">
+                From daily upkeep to intensive deep cleaning, our reliable and courteous staff are committed to exceeding your expectations.
+                With SSE, you don’t just get cleaning—you get the comfort of a professionally maintained space.
+              </p>
 
             </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Contact Banner - Same as About Page */}
-  <section className="py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
+      {/* Contact Banner */}
+      <section className="py-10 md:py-16 relative" style={{ background: 'linear-gradient(135deg, #184FA1 0%, #184FA1 100%)' }}>
         <div className="absolute inset-0 z-0 pointer-events-none" style={{
           backgroundImage: `repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px)`
         }} />
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '180px' }}>
+        <div className="container mx-auto px-2 md:px-4 flex flex-col lg:flex-row items-center justify-between relative z-10" style={{ minHeight: '120px' }}>
           <motion.h2
-            className="text-white text-3xl md:text-4xl font-semibold mb-8 lg:mb-0"
+            className="text-white text-2xl md:text-4xl font-semibold mb-6 md:mb-0"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -257,18 +257,18 @@ const CleaningServices = () => {
             Need a SSE People fast?
           </motion.h2>
           <motion.a
-            href="tel:7674073004"
-            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
-            style={{ marginLeft: 'auto' }}
+            href="https://wa.me/917330009993"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-5 rounded-xl shadow-lg transition-all"
+            style={{ marginLeft: '0', marginTop: '8px', marginBottom: '8px' }}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={2}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
-            Call Us +91-7330009993
+            WhatsApp +91-7330009993
           </motion.a>
         </div>
       </section>
