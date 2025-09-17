@@ -28,21 +28,21 @@ const Services = () => {
     {
       id: 1,
       icon: Shield,
-      image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757855106/services-1_bdzsoc.webp",
+      image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1758108640/5f6ed60d-fd65-437b-bedc-585387acfcd5_biucff.png",
       description: "Professional security solutions with 24/7 monitoring and trained personnel.",
       features: ["24/7 Security Personnel", "CCTV Monitoring", "Access Control", "Emergency Response"]
     },
     {
       id: 2,
       icon: Sparkles,
-      image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1757964157/c98fa6f9-6cda-4659-b11b-a1ccd0670a59_fekqto.png",
+      image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1758108966/generated-image_on169t.png",
       description: "Complete cleaning solutions for homes and commercial spaces.",
       features: ["Regular House Cleaning", "Deep Cleaning", "Office Maintenance", "Eco-Friendly Products"]
     },
     {
       id: 3,
       icon: Bug,
-      image: "https://res.cloudinary.com/db57uudtz/image/upload/v1757855163/services-3_aic7qc.jpg",
+      image: "https://res.cloudinary.com/ds4stvfr3/image/upload/v1758109282/e884d3c2-7ebf-45c5-8e17-cf50885b8664_nxw2gw.png",
       description: "Effective pest management with safe and sustainable methods.",
       features: ["Residential Treatment", "Commercial Solutions", "Preventive Care", "Safe Methods"]
     }
