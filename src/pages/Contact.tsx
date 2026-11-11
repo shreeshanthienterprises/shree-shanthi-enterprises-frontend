@@ -1,3 +1,4 @@
+import { CONTACT_API_URL, getErrorMessage } from "@/lib/api";
 import Footer from "@/components/Footer";
 
 import Header from "@/components/Header";
@@ -21,6 +22,7 @@ const fadeUp = {
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -31,7 +33,7 @@ const Contact = () => {
     e.preventDefault();
     setError("");
     setSuccess("");
-    if (!name || !email || !service || !message) {
+    if (!name || !email || !phone || !service || !message) {
       setError("Please fill in all fields.");
       return;
     }
@@ -40,14 +42,20 @@ const Contact = () => {
       setError("Please enter a valid email address.");
       return;
     }
+    const phoneDigits = phone.replace(/\D/g, "");
+    if (!/^\+?[\d\s\-().]{7,20}$/.test(phone.trim()) || phoneDigits.length < 7 || phoneDigits.length > 15) {
+      setError("Please enter a valid phone number.");
+      return;
+    }
     setLoading(true);
     try {
-      const res = await fetch("https://shree-shanthi-backend.onrender.com/api/contact", {
+      const res = await fetch(CONTACT_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name,
           email,
+          phone: phone.trim(),
           service,
           message
         })
@@ -56,10 +64,11 @@ const Contact = () => {
         setSuccess("Your request has been submitted successfully!");
         setName("");
         setEmail("");
+        setPhone("");
         setService("");
         setMessage("");
       } else {
-        setError("Failed to submit. Please try again later.");
+        setError(await getErrorMessage(res));
       }
     } catch (err) {
       setError("Network error. Please try again later.");
@@ -150,6 +159,15 @@ const Contact = () => {
                       placeholder="jane@framer.com"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
+                      className="w-full rounded-xl bg-white px-5 py-4 text-base font-medium text-gray-900 border-none outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
+                    />
+                    <input
+                      type="tel"
+                      inputMode="tel"
+                      autoComplete="tel"
+                      placeholder="Phone number (e.g. +91 98765 43210)"
+                      value={phone}
+                      onChange={e => setPhone(e.target.value)}
                       className="w-full rounded-xl bg-white px-5 py-4 text-base font-medium text-gray-900 border-none outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
                     />
                     <select
