@@ -1,4 +1,5 @@
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import LoaderOverlay from "@/components/ui/LoaderOverlay";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -50,6 +51,7 @@ const App = () => {
               </Routes>
             </Suspense>
           </ErrorBoundary>
+          <WhatsAppFloat />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

@@ -1,3 +1,4 @@
+import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/config/site";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { motion } from "framer-motion";
@@ -210,7 +211,7 @@ const AboutUs = () => {
               Need a SSE People fast?
             </motion.h2>
             <motion.a
-              href="https://wa.me/917330009993"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-5 rounded-xl shadow-lg transition-all"
@@ -221,7 +222,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               custom={2}
             >
-              WhatsApp +91-7330009993
+              {WHATSAPP_LABEL}
             </motion.a>
           </div>
         </section>

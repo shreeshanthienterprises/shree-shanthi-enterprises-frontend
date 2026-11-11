@@ -1,3 +1,4 @@
+import { PRIMARY_PHONE } from "@/config/site";
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { FaPhoneAlt } from "react-icons/fa";
@@ -6,7 +7,7 @@ import { PiHouseSimpleBold, PiUserBold } from "react-icons/pi";
 const steps = [
   {
     icon: <FaPhoneAlt size={32} className="text-black" />,
-    title: "Call us +91-7330009993",
+    title: `Call us ${PRIMARY_PHONE.display}`,
     description: (
       <>
         We remain available 24/7 for any<br />

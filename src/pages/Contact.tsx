@@ -1,10 +1,14 @@
+import PhoneLinks from "@/components/PhoneLinks";
+import SocialLinks from "@/components/SocialLinks";
+import { SITE } from "@/config/site";
+import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/config/site";
 import { CONTACT_API_URL, getErrorMessage } from "@/lib/api";
 import Footer from "@/components/Footer";
 
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { easeOut, motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import React, { useState } from "react";
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -122,23 +126,29 @@ const Contact = () => {
                   SSE combines expertise, professionalism, and care to provide dependable solutions for every environment.
                 </p>
                 <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-3 text-lg text-foreground">
-                    <Phone className="w-5 h-5 text-accent" />
-                    <span>+91-7330009993</span>
-                  </div>
+                  <PhoneLinks />
                   <div className="flex items-center gap-3 text-lg text-foreground">
                     <MapPin className="w-5 h-5 text-accent" />
-                    <span>Hyderabad</span>
+                    <span>{SITE.address.locality}</span>
                   </div>
                   <div className="flex items-center gap-3 text-lg text-foreground">
                     <Mail className="w-5 h-5 text-accent" />
-                    <span>shreeshanthienterprises@gmail.com</span>
+                    <a
+                      href={`mailto:${SITE.email}`}
+                      className="inline-flex min-h-[44px] items-center break-all rounded-md transition-colors hover:text-[#184FA1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    >
+                      {SITE.email}
+                    </a>
                   </div>
+                </div>
+                <div>
+                  <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">Follow us</p>
+                  <SocialLinks />
                 </div>
               </div>
 
               {/* Right: Contact Form (glassy card) */}
-              <div className="bg-[#eaf1fa] rounded-3xl shadow-2xl p-10 w-full md:w-[420px] flex-shrink-0 flex flex-col justify-center" style={{ boxShadow: '0 8px 32px 0 rgba(60, 80, 120, 0.12)' }}>
+              <div className="bg-[#eaf1fa] rounded-3xl shadow-2xl p-10 w-full lg:w-[420px] flex-shrink-0 flex flex-col justify-center" style={{ boxShadow: '0 8px 32px 0 rgba(60, 80, 120, 0.12)' }}>
                 <h2 className="text-center text-2xl font-semibold mb-8 text-gray-900">Need a SSE People?</h2>
                 {success ? (
                   <div className="text-center">
@@ -224,7 +234,7 @@ const Contact = () => {
               Need a SSE People fast?
             </motion.h2>
             <motion.a
-              href="https://wa.me/917330009993"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#F44E40] hover:bg-[#e13c2e] text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-5 rounded-xl shadow-lg transition-all"
@@ -235,7 +245,7 @@ const Contact = () => {
               viewport={{ once: true }}
               custom={2}
             >
-              WhatsApp +91-7330009993
+              {WHATSAPP_LABEL}
             </motion.a>
           </div>
         </section>

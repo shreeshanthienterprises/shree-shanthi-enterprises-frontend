@@ -1,6 +1,8 @@
 import logo from "@/assets/SSE logo-01.png";
 import { memo, useCallback, useMemo, useState } from "react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import PhoneLinks from "@/components/PhoneLinks";
+import SocialLinks from "@/components/SocialLinks";
+import { SITE } from "@/config/site";
 
 // Use Cloudinary URLs for images (no local imports)
 const images = [
@@ -105,30 +107,6 @@ const ImageGrid = memo(() => {
 
 ImageGrid.displayName = 'ImageGrid';
 
-// Enhanced social links
-const SocialLinks = memo(() => (
-  <div className="flex space-x-4 mt-4">
-    {[
-      { Icon: FaFacebookF, color: "hover:text-blue-600", bg: "hover:bg-blue-50", label: "Facebook" },
-      { Icon: FaTwitter, color: "hover:text-blue-400", bg: "hover:bg-blue-50", label: "Twitter" },
-      { Icon: FaInstagram, color: "hover:text-pink-500", bg: "hover:bg-pink-50", label: "Instagram" },
-      { Icon: FaYoutube, color: "hover:text-red-500", bg: "hover:bg-red-50", label: "YouTube" }
-    ].map(({ Icon, color, bg, label }) => (
-      <a
-        key={label}
-        href="#"
-        aria-label={label}
-        className={`p-3 rounded-full text-gray-600 ${color} ${bg} transition-all duration-300 hover:scale-110 hover:shadow-md border border-gray-200 hover:border-transparent`}
-      >
-        <Icon className="text-lg" />
-      </a>
-    ))}
-  </div>
-));
-
-SocialLinks.displayName = 'SocialLinks';
-
-
 type AddressCardProps = {
   title: string;
   address1: string;
@@ -152,10 +130,10 @@ AddressCard.displayName = 'AddressCard';
 const Footer = () => {
   const addressData = useMemo(() => [
     {
-      title: "Hyderabad",
-      address1: "Rajendra Nagar, Hyderabad",
-      address2: "Ranga Reddy 500005",
-      searchQuery: "Rajendra Nagar, Hyderabad, Ranga Reddy 500005"
+      title: SITE.address.locality,
+      address1: SITE.address.line1,
+      address2: SITE.address.line2,
+      searchQuery: `${SITE.address.line1}, ${SITE.address.line2}`
     }
   ], []);
 
@@ -178,7 +156,7 @@ const Footer = () => {
             <div className="text-gray-700 text-lg leading-relaxed">
               Reliable Security,<br />Housekeeping, and Pest<br />Control Services
             </div>
-            <SocialLinks />
+            <SocialLinks className="mt-2" />
           </div>
           {/* Center: Image Grid */}
           <div className="flex flex-col items-center justify-center">
@@ -194,6 +172,10 @@ const Footer = () => {
                 address2={addr.address2}
               />
             ))}
+            <div className="mt-6 w-full">
+              <h4 className="mb-2 text-xl font-bold text-gray-900">Call us</h4>
+              <PhoneLinks textClass="text-lg" />
+            </div>
           </div>
         </div>
       </div>
